@@ -25,10 +25,7 @@ echo '          ""9@#####@M""           ""P@#####@M""                    '
 echo ''
 
 
-
-hosts="casa ion_pro ion_pre"
-
-hosts=`cat .ssh/config | grep ^Host | grep -v "*" | awk '{print $2}' | sort`
+hosts=`cat ~/.ssh/config | grep ^Host | grep -v "*" | awk '{print $2}' | sort`
 select option in $hosts
 do
 	ssh $option
