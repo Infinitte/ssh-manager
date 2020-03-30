@@ -4,7 +4,7 @@ Script that read your .ssh/config and makes a menu to choose what server to conn
 
 <h1>Installing</h1>
 Just download and copy somewhere in your path. For instance:
-```bash
+```
 sudo cp ssh-manager.sh /usr/local/bin/ssh-manager
 sudo chmod +x /usr/local/bin/ssh-manager
 ```
