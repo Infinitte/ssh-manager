@@ -26,8 +26,24 @@ echo ''
 
 
 hosts=`cat ~/.ssh/config | grep ^Host | grep -v "*" | awk '{print $2}' | sort`
-select option in $hosts
-do
-	ssh $option
+echo "Select method"
+select mecanism in ssh mc
+do 
+	echo "Select Host"
+	select option in $hosts
+	do
+		case $mecanism in
+		"ssh")
+			ssh $option
+			;;
+		"mc")
+			mc . sh://$option
+			;;
+		*)
+			break
+			;;
+		esac
+		exit
+	done
 	exit
 done
